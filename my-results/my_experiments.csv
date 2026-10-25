@@ -1,0 +1,17 @@
+﻿domain,instance,planner,status,runtime_seconds,search_time_seconds,plan_length,plan_cost,expanded_states,evaluated_states,peak_memory_kb,validation_valid,validation_cost,log_file,plan_file,validation_file
+domain-A,small,lama-first,solved,0.22,0,11,11,30,52,11732,True,11,my-results/domain-A-small-lama-first.log,my-plans/domain-A-small-lama-first.plan,my-validation/domain-A-small-lama-first-val.txt
+domain-A,small,astar-lmcut,solved,0.25,0,11,11,43,108,11732,True,11,my-results/domain-A-small-astar-lmcut.log,my-plans/domain-A-small-astar-lmcut.plan,my-validation/domain-A-small-astar-lmcut-val.txt
+domain-A,medium,lama-first,solved,0.25,0,35,42,79,85,11868,True,42,my-results/domain-A-medium-lama-first.log,my-plans/domain-A-medium-lama-first.plan,my-validation/domain-A-medium-lama-first-val.txt
+domain-A,medium,astar-lmcut,solved,13.05,12.792121,28,32,184237,339062,24524,True,32,my-results/domain-A-medium-astar-lmcut.log,my-plans/domain-A-medium-astar-lmcut.plan,my-validation/domain-A-medium-astar-lmcut-val.txt
+domain-A,large,lama-first,solved,0.26,0.006211,32,35,77,78,12024,True,35,my-results/domain-A-large-lama-first.log,my-plans/domain-A-large-lama-first.plan,my-validation/domain-A-large-lama-first-val.txt
+domain-A,large,astar-lmcut,timeout,288.01,,,,200770,983179,69180,,,my-results/domain-A-large-astar-lmcut.log,,
+domain-A,large-1drone,lama-first,solved,0.29,0.004908,44,56,100,112,11868,True,56,my-results/domain-A-large-1drone-lama-first.log,my-plans/domain-A-large-1drone-lama-first.plan,my-validation/domain-A-large-1drone-lama-first-val.txt
+domain-A,large-1drone,astar-lmcut,solved,0.42,0.179434,35,39,4614,6842,12044,True,39,my-results/domain-A-large-1drone-astar-lmcut.log,my-plans/domain-A-large-1drone-astar-lmcut.plan,my-validation/domain-A-large-1drone-astar-lmcut-val.txt
+domain-B,small,lama-first,solved,0.24,0,12,12,31,53,11732,True,12,my-results/domain-B-small-lama-first.log,my-plans/domain-B-small-lama-first.plan,my-validation/domain-B-small-lama-first-val.txt
+domain-B,small,astar-lmcut,solved,0.21,0,12,12,67,149,11732,True,12,my-results/domain-B-small-astar-lmcut.log,my-plans/domain-B-small-astar-lmcut.plan,my-validation/domain-B-small-astar-lmcut-val.txt
+domain-B,medium,lama-first,solved,0.33,0.095553,48,55,10480,12890,13248,True,55,my-results/domain-B-medium-lama-first.log,my-plans/domain-B-medium-lama-first.plan,my-validation/domain-B-medium-lama-first-val.txt
+domain-B,medium,astar-lmcut,solved,21.83,21.581362,34,38,446517,652985,36028,True,38,my-results/domain-B-medium-astar-lmcut.log,my-plans/domain-B-medium-astar-lmcut.plan,my-validation/domain-B-medium-astar-lmcut-val.txt
+domain-B,large,lama-first,solved,0.29,0.007807,52,61,485,545,12160,True,61,my-results/domain-B-large-lama-first.log,my-plans/domain-B-large-lama-first.plan,my-validation/domain-B-large-lama-first-val.txt
+domain-B,large,astar-lmcut,timeout,288.12,,,,188841,924626,68940,,,my-results/domain-B-large-astar-lmcut.log,,
+domain-B,large-1drone,lama-first,solved,0.24,0.00947,51,55,2162,2924,12136,True,55,my-results/domain-B-large-1drone-lama-first.log,my-plans/domain-B-large-1drone-lama-first.plan,my-validation/domain-B-large-1drone-lama-first-val.txt
+domain-B,large-1drone,astar-lmcut,solved,0.56,0.289323,48,53,7528,10376,12164,True,53,my-results/domain-B-large-1drone-astar-lmcut.log,my-plans/domain-B-large-1drone-astar-lmcut.plan,my-validation/domain-B-large-1drone-astar-lmcut-val.txt
