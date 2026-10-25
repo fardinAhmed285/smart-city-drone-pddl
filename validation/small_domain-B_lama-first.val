@@ -1,0 +1,135 @@
+Type-checking fly
+...action passes type checking.
+Type-checking inspect
+...action passes type checking.
+Type-checking pick-up-supply
+...action passes type checking.
+Type-checking deliver-supply
+...action passes type checking.
+Type-checking recharge
+...action passes type checking.
+Checking plan: /mnt/e/smart_city_pddl/plans/small_domain-B_lama-first.plan
+Plan to validate:
+
+Plan size: 12
+1:
+(pick-up-supply drone1 med1 depot)
+ 
+2:
+(fly drone1 depot charging b4 b1 b3)
+ 
+3:
+(fly drone1 charging site1 b3 b1 b2)
+ 
+4:
+(inspect drone1 site1)
+ 
+5:
+(fly drone1 site1 charging b2 b1 b1)
+ 
+6:
+(recharge drone1 charging b1 b2)
+ 
+7:
+(fly drone1 charging site2 b2 b1 b1)
+ 
+8:
+(inspect drone1 site2)
+ 
+9:
+(fly drone1 site2 charging b1 b1 b0)
+ 
+10:
+(recharge drone1 charging b0 b1)
+ 
+11:
+(fly drone1 charging site3 b1 b1 b0)
+ 
+12:
+(deliver-supply drone1 med1 site3)
+ 
+
+Plan Validation details
+-----------------------
+
+Checking next happening (time 1)
+Deleting (supply-at med1 depot)
+Deleting (empty drone1)
+Adding (carrying drone1 med1)
+Updating (total-cost) (0) by 1 increase
+
+Checking next happening (time 2)
+Deleting (at drone1 depot)
+Deleting (battery drone1 b4)
+Adding (at drone1 charging)
+Adding (battery drone1 b3)
+Updating (total-cost) (1) by 1 increase
+
+Checking next happening (time 3)
+Deleting (at drone1 charging)
+Deleting (battery drone1 b3)
+Adding (at drone1 site1)
+Adding (battery drone1 b2)
+Updating (total-cost) (2) by 1 increase
+
+Checking next happening (time 4)
+Adding (inspected site1)
+Updating (total-cost) (3) by 1 increase
+
+Checking next happening (time 5)
+Deleting (at drone1 site1)
+Deleting (battery drone1 b2)
+Adding (at drone1 charging)
+Adding (battery drone1 b1)
+Updating (total-cost) (4) by 1 increase
+
+Checking next happening (time 6)
+Deleting (battery drone1 b1)
+Adding (battery drone1 b2)
+Updating (total-cost) (5) by 1 increase
+
+Checking next happening (time 7)
+Deleting (at drone1 charging)
+Deleting (battery drone1 b2)
+Adding (at drone1 site2)
+Adding (battery drone1 b1)
+Updating (total-cost) (6) by 1 increase
+
+Checking next happening (time 8)
+Adding (inspected site2)
+Updating (total-cost) (7) by 1 increase
+
+Checking next happening (time 9)
+Deleting (at drone1 site2)
+Deleting (battery drone1 b1)
+Adding (at drone1 charging)
+Adding (battery drone1 b0)
+Updating (total-cost) (8) by 1 increase
+
+Checking next happening (time 10)
+Deleting (battery drone1 b0)
+Adding (battery drone1 b1)
+Updating (total-cost) (9) by 1 increase
+
+Checking next happening (time 11)
+Deleting (at drone1 charging)
+Deleting (battery drone1 b1)
+Adding (at drone1 site3)
+Adding (battery drone1 b0)
+Updating (total-cost) (10) by 1 increase
+
+Checking next happening (time 12)
+Deleting (carrying drone1 med1)
+Deleting (needs site3 med1)
+Adding (empty drone1)
+Adding (delivered med1 site3)
+Adding (supply-at med1 site3)
+Updating (total-cost) (11) by 1 increase
+Plan executed successfully - checking goal
+Plan valid
+Final value: 12 
+
+Successful plans:
+Value: 12
+ /mnt/e/smart_city_pddl/plans/small_domain-B_lama-first.plan 12 
+

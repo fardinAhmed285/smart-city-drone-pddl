@@ -1,0 +1,21 @@
+run_id,problem,domain,planner,solved,runtime_s,search_time_s,plan_length,plan_cost,val_valid,val_cost,expanded_states,evaluated_states,generated_states,peak_memory_kb,notes
+small_domain-A_lama-first,small,domain-A,lama-first,Yes,0.57,0.00796,11,11,Yes,11.0,31,53,89,11728,Plan validated by VAL
+small_domain-A_astar-lmcut,small,domain-A,astar-lmcut,Yes,0.54,0.003704,11,11,Yes,11.0,44,108,124,11728,Plan validated by VAL
+small_domain-B_lama-first,small,domain-B,lama-first,Yes,0.53,0.0,12,12,Yes,12.0,32,54,86,11728,Plan validated by VAL
+small_domain-B_astar-lmcut,small,domain-B,astar-lmcut,Yes,0.5,0.0,12,12,Yes,12.0,68,149,180,11728,Plan validated by VAL
+medium_domain-A_lama-first,medium,domain-A,lama-first,Yes,0.59,0.01017,35,42,Yes,42.0,80,86,348,11864,Plan validated by VAL
+medium_domain-A_astar-lmcut,medium,domain-A,astar-lmcut,Yes,38.6,38.051762,28,32,Yes,32.0,184238,339062,926620,24512,Plan validated by VAL
+medium_domain-B_lama-first,medium,domain-B,lama-first,Yes,0.79,0.26128,48,55,Yes,55.0,10481,12891,42086,13244,Plan validated by VAL
+medium_domain-B_astar-lmcut,medium,domain-B,astar-lmcut,Yes,68.12,67.553401,34,38,Yes,38.0,446518,652985,2185679,36008,Plan validated by VAL
+large_domain-A_lama-first,large,domain-A,lama-first,Yes,0.7,0.009635,32,35,Yes,35.0,78,79,664,12020,Plan validated by VAL
+large_domain-A_astar-lmcut,large,domain-A,astar-lmcut,No,298.27,,,,N/A,,,,,66076,Unsolved / Search Exhausted without Solution
+large_domain-B_lama-first,large,domain-B,lama-first,Yes,0.68,0.029673,52,61,Yes,61.0,486,546,2656,12156,Plan validated by VAL
+large_domain-B_astar-lmcut,large,domain-B,astar-lmcut,No,,,,,N/A,,,,,67848,Unsolved / Search Exhausted without Solution
+large-1drone_domain-A_lama-first,large-1drone,domain-A,lama-first,Yes,0.54,0.020035,44,56,Yes,56.0,101,113,327,11864,Plan validated by VAL
+large-1drone_domain-A_astar-lmcut,large-1drone,domain-A,astar-lmcut,Yes,1.16,0.585989,35,39,Yes,39.0,4615,6842,14329,12040,Plan validated by VAL
+large-1drone_domain-B_lama-first,large-1drone,domain-B,lama-first,Yes,0.6,0.069746,51,55,Yes,55.0,2163,2925,6314,12132,Plan validated by VAL
+large-1drone_domain-B_astar-lmcut,large-1drone,domain-B,astar-lmcut,Yes,1.35,0.81293,48,53,Yes,53.0,7529,10376,23489,12160,Plan validated by VAL
+large_domain-A_lama-anytime,large,domain-A,lama-anytime,Yes,89.59,,32,35,Yes,30.0,78,79,664,279720,Plan validated by VAL
+large-1drone_domain-A_lama-anytime,large-1drone,domain-A,lama-anytime,Yes,1.61,1.098554,44,56,Yes,39.0,101,113,327,13264,Plan validated by VAL
+large_domain-B_lama-anytime,large,domain-B,lama-anytime,Yes,89.71,,52,61,Yes,31.0,486,546,2656,177420,Plan validated by VAL
+large-1drone_domain-B_lama-anytime,large-1drone,domain-B,lama-anytime,Yes,2.49,1.92409,51,55,Yes,53.0,2163,2925,6314,13208,Plan validated by VAL
