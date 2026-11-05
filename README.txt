@@ -34,7 +34,7 @@ Four problem instances are evaluated:
   ├── problem-large-1drone.pddl  # Large problem instance (1 drone variant)
   ├── README.txt                 # Exact setup, execution, and validation instructions
   ├── my-plans/                     # Generated planner plans (*.plan)
-  ├── my-validation/                # Actual VAL validation outputs (*.val)
+  ├── my-validation/                # VAL validation outputs (*.txt)
   ├── my-results/                   # Raw planner execution logs and summary CSV/JSON
   │     ├── experiments_results.csv
   │     ├── experiments_results.json
@@ -64,24 +64,88 @@ WSL2
 
 4. REPRODUCING EXPERIMENTS
 
+Open the Ubuntu terminal from PowerShell:
 
-	A. LAMA-first:
-  	  fast-downward.py --overall-time-limit 5m --overall-memory-limit 4G \
- 	  --plan-file my-plans/generated-plan.plan \
-  	  --alias lama-first <domain-file>.pddl <problem-file>.pddl
+wsl -d Ubuntu
 
-	B. A* with LM-cut:
- 	  fast-downward.py --overall-time-limit 5m --overall-memory-limit 4G \
-  	  --plan-file my-plans/generated-plan.plan \
- 	  <domain-file>.pddl <problem-file>.pddl --search "astar(lmcut())"
+Run all the following commands from the project directory.
+
+A. LAMA-first
+
+Domain A
+fast-downward.py --overall-time-limit 5m --overall-memory-limit 4G --plan-file my-plans/domain-A-small-lama-first.plan --alias lama-first domain-A.pddl problem-small.pddl 2>&1 | tee my-results/domain-A-small-lama-first.log
+
+fast-downward.py --overall-time-limit 5m --overall-memory-limit 4G --plan-file my-plans/domain-A-medium-lama-first.plan --alias lama-first domain-A.pddl problem-medium.pddl 2>&1 | tee my-results/domain-A-medium-lama-first.log
+
+fast-downward.py --overall-time-limit 5m --overall-memory-limit 4G --plan-file my-plans/domain-A-large-lama-first.plan --alias lama-first domain-A.pddl problem-large.pddl 2>&1 | tee my-results/domain-A-large-lama-first.log
+
+fast-downward.py --overall-time-limit 5m --overall-memory-limit 4G --plan-file my-plans/domain-A-large-1drone-lama-first.plan --alias lama-first domain-A.pddl problem-large-1drone.pddl 2>&1 | tee my-results/domain-A-large-1drone-lama-first.log
+
+Domain B
+
+fast-downward.py --overall-time-limit 5m --overall-memory-limit 4G --plan-file my-plans/domain-B-small-lama-first.plan --alias lama-first domain-B.pddl problem-small.pddl 2>&1 | tee my-results/domain-B-small-lama-first.log
+
+fast-downward.py --overall-time-limit 5m --overall-memory-limit 4G --plan-file my-plans/domain-B-medium-lama-first.plan --alias lama-first domain-B.pddl problem-medium.pddl 2>&1 | tee my-results/domain-B-medium-lama-first.log
+
+fast-downward.py --overall-time-limit 5m --overall-memory-limit 4G --plan-file my-plans/domain-B-large-lama-first.plan --alias lama-first domain-B.pddl problem-large.pddl 2>&1 | tee my-results/domain-B-large-lama-first.log
+
+fast-downward.py --overall-time-limit 5m --overall-memory-limit 4G --plan-file my-plans/domain-B-large-1drone-lama-first.plan --alias lama-first domain-B.pddl problem-large-1drone.pddl 2>&1 | tee my-results/domain-B-large-1drone-lama-first.log
+
+
+B. A* with LM-cut
+Domain A
+
+fast-downward.py --overall-time-limit 5m --overall-memory-limit 4G --plan-file my-plans/domain-A-small-astar-lmcut.plan domain-A.pddl problem-small.pddl --search "astar(lmcut())" 2>&1 | tee my-results/domain-A-small-astar-lmcut.log
+
+fast-downward.py --overall-time-limit 5m --overall-memory-limit 4G --plan-file my-plans/domain-A-medium-astar-lmcut.plan domain-A.pddl problem-medium.pddl --search "astar(lmcut())" 2>&1 | tee my-results/domain-A-medium-astar-lmcut.log
+
+fast-downward.py --overall-time-limit 5m --overall-memory-limit 4G --plan-file my-plans/domain-A-large-astar-lmcut.plan domain-A.pddl problem-large.pddl --search "astar(lmcut())" 2>&1 | tee my-results/domain-A-large-astar-lmcut.log
+
+fast-downward.py --overall-time-limit 5m --overall-memory-limit 4G --plan-file my-plans/domain-A-large-1drone-astar-lmcut.plan domain-A.pddl problem-large-1drone.pddl --search "astar(lmcut())" 2>&1 | tee my-results/domain-A-large-1drone-astar-lmcut.log
+
+Domain B
+
+fast-downward.py --overall-time-limit 5m --overall-memory-limit 4G --plan-file my-plans/domain-B-small-astar-lmcut.plan domain-B.pddl problem-small.pddl --search "astar(lmcut())" 2>&1 | tee my-results/domain-B-small-astar-lmcut.log
+
+fast-downward.py --overall-time-limit 5m --overall-memory-limit 4G --plan-file my-plans/domain-B-medium-astar-lmcut.plan domain-B.pddl problem-medium.pddl --search "astar(lmcut())" 2>&1 | tee my-results/domain-B-medium-astar-lmcut.log
+
+fast-downward.py --overall-time-limit 5m --overall-memory-limit 4G --plan-file my-plans/domain-B-large-astar-lmcut.plan domain-B.pddl problem-large.pddl --search "astar(lmcut())" 2>&1 | tee my-results/domain-B-large-astar-lmcut.log
+
+fast-downward.py --overall-time-limit 5m --overall-memory-limit 4G --plan-file my-plans/domain-B-large-1drone-astar-lmcut.plan domain-B.pddl problem-large-1drone.pddl --search "astar(lmcut())" 2>&1 | tee my-results/domain-B-large-1drone-astar-lmcut.log
 
 5. PLAN VALIDATION WITH VAL
 
-	To validate any generated plan using the standard VAL validator:
-  	Validate -v <domain.pddl> <problem.pddl> <plan_file>
+Domain A
 
-	Example:
- 	 Validate -v domain-A.pddl problem-small.pddl my-plans/small_domain-A_lama-first.plan
+Validate -v domain-A.pddl problem-small.pddl my-plans/domain-A-small-lama-first.plan 2>&1 | tee my-validation/domain-A-small-lama-first-val.txt
+
+Validate -v domain-A.pddl problem-medium.pddl my-plans/domain-A-medium-lama-first.plan 2>&1 | tee my-validation/domain-A-medium-lama-first-val.txt
+
+Validate -v domain-A.pddl problem-large.pddl my-plans/domain-A-large-lama-first.plan 2>&1 | tee my-validation/domain-A-large-lama-first-val.txt
+
+Validate -v domain-A.pddl problem-large-1drone.pddl my-plans/domain-A-large-1drone-lama-first.plan 2>&1 | tee my-validation/domain-A-large-1drone-lama-first-val.txt
+
+Validate -v domain-A.pddl problem-small.pddl my-plans/domain-A-small-astar-lmcut.plan 2>&1 | tee my-validation/domain-A-small-astar-lmcut-val.txt
+
+Validate -v domain-A.pddl problem-medium.pddl my-plans/domain-A-medium-astar-lmcut.plan 2>&1 | tee my-validation/domain-A-medium-astar-lmcut-val.txt
+
+Validate -v domain-A.pddl problem-large-1drone.pddl my-plans/domain-A-large-1drone-astar-lmcut.plan 2>&1 | tee my-validation/domain-A-large-1drone-astar-lmcut-val.txt
 
 
+Domain B
 
+Validate -v domain-B.pddl problem-small.pddl my-plans/domain-B-small-lama-first.plan 2>&1 | tee my-validation/domain-B-small-lama-first-val.txt
+
+Validate -v domain-B.pddl problem-medium.pddl my-plans/domain-B-medium-lama-first.plan 2>&1 | tee my-validation/domain-B-medium-lama-first-val.txt
+
+Validate -v domain-B.pddl problem-large.pddl my-plans/domain-B-large-lama-first.plan 2>&1 | tee my-validation/domain-B-large-lama-first-val.txt
+
+Validate -v domain-B.pddl problem-large-1drone.pddl my-plans/domain-B-large-1drone-lama-first.plan 2>&1 | tee my-validation/domain-B-large-1drone-lama-first-val.txt
+
+Validate -v domain-B.pddl problem-small.pddl my-plans/domain-B-small-astar-lmcut.plan 2>&1 | tee my-validation/domain-B-small-astar-lmcut-val.txt
+
+Validate -v domain-B.pddl problem-medium.pddl my-plans/domain-B-medium-astar-lmcut.plan 2>&1 | tee my-validation/domain-B-medium-astar-lmcut-val.txt
+
+Validate -v domain-B.pddl problem-medium.pddl my-plans/domain-B-medium-astar-lmcut.plan 2>&1 | tee my-validation/domain-B-medium-astar-lmcut-val.txt
+
+Note: The two Large instances with three drones using A* (LM-cut) timed out. Therefore, their plans could not be validated with VAL. All other generated plans listed above were submitted for validation.
